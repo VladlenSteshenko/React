@@ -1,0 +1,24 @@
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.episodes,
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.episode,
+.character {
+  border: 10px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.character img {
+  width: 100%;
+  height: auto;
+}
