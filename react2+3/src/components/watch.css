@@ -1,0 +1,23 @@
+.watch {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.clock-face {
+  width: 100%;
+  height: 100%;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  top: 0;
+  left: 0;
+}
