@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState, useEffect } from 'react';
 import Spoiler from "./components/task1";
 import RangeInput from "./components/task2";
 import LoginForm from './components/task3';
@@ -10,6 +11,7 @@ import { SecondsTimer } from './components/task3.3';
 import { TimerContainer, Timer } from './components/task3.4';
 import Watch from './components/task3.5';
 import Phonebook from './components/task3.7';
+import { Testtoken1 } from './components/jwttoken';
 
 function App() {
   const handleLogin = (login, password) => {
@@ -36,6 +38,19 @@ function App() {
       {page}
     </div>
   );
+
+  const [execute, setExecute] = useState(false);
+
+    useEffect(() => {
+        if (execute) {
+            Testtoken1();
+            setExecute(false); // Скидаємо стан після виконання
+        }
+    }, [execute]); // Виконувати useEffect при зміні стану execute
+
+    const handleClick = () => {
+        setExecute(true);
+    };
 
   return (
     <div className="App">
@@ -67,6 +82,8 @@ function App() {
       <TimerContainer seconds={3600} refresh={1000} render={Watch} />
       <h1>Phonebook</h1>
       <Phonebook /> {Phonebook}
+      <h1>JWT Decode Example</h1>
+      <button onClick={handleClick}>Run Testtoken1</button>
     </div>
   );
 }
